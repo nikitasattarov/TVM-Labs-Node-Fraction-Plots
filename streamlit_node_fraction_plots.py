@@ -161,7 +161,10 @@ elif max_y_value > 10 ** 6:
         new_labels = [f'{int(y_tick / 1e6)}' for y_tick in y_ticks]
 elif max_y_value > 10 ** 3:
     ax.set_ylabel(r'Token Amount (in thousands)')
-    new_labels = [f'{int(y_tick / 1e3)}' for y_tick in y_ticks]
+    if any(y_tick % 1e6 != 0 for y_tick in y_ticks):
+        new_labels = [f'{y_tick / 1e3:.1f}' for y_tick in y_ticks]
+    else:
+        new_labels = [f'{int(y_tick / 1e3)}' for y_tick in y_ticks]
 else:
     ax.set_ylabel(r'Token Amount')
 new_labels[0] = '0'
