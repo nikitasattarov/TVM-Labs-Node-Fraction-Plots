@@ -167,6 +167,7 @@ elif max_y_value > 10 ** 3:
         new_labels = [f'{int(y_tick / 1e3)}' for y_tick in y_ticks]
 else:
     ax.set_ylabel(r'Token Amount')
+    new_labels = [y_tick for y_tick in y_ticks]
 new_labels[0] = '0'
 ax.set_yticklabels(new_labels)
 if plot_scale == 1:
