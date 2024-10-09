@@ -41,7 +41,7 @@ def input_number_of_licenses_per_tier_bk(ParticipantsNum, ServerFraction):
     return st.number_input(
         label = r'Insert a number of packages', 
         #help = r"Number of licenses is in $ \left\lbrack 1, \min\left(200, \ \text{Number of Block Keepers}\right) \right\rbrack $", 
-        help = rf"Number of packages is in $ \left\lbrack 1, {upper_limit} \right\rbrack $",
+        help = rf"Number of packages is in $ \left\lbrack 1, {int(upper_limit)} \right\rbrack $",
         value = 1, 
         format = "%i",
         min_value = 1,
