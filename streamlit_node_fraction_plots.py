@@ -37,7 +37,7 @@ def expected_apy_calc(YearsNumber, TotalSupply, KFS, u_tokens, SecondsInYear, FR
 
 def input_number_of_licenses_per_tier_bk(ParticipantsNum, ServerFraction):
     upper_limit = dec(0.5) * ParticipantsNum * ServerFraction
-    st.write(upper_limit)
+    #st.write(upper_limit)
     return st.number_input(
         label = r'Insert a number of packages', 
         #help = r"Number of licenses is in $ \left\lbrack 1, \min\left(200, \ \text{Number of Block Keepers}\right) \right\rbrack $", 
@@ -105,9 +105,9 @@ package_type_option = st.selectbox(
 )
 
 cores_num = int(package_type_option.split()[0])
-st.write(cores_num)
+#st.write(cores_num)
 server_fraction = dec(500) / dec(cores_num)
-st.write(server_fraction)
+#st.write(server_fraction)
 
 package_price = dec(input_bk_package_price())
 ParticipantsNum = dec(input_number_of_block_keepers())
