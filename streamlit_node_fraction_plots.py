@@ -46,7 +46,7 @@ def input_number_of_licenses_per_tier_bk(ParticipantsNum, ServerFraction):
         format = "%i",
         min_value = 1,
         #max_value = min(200, int(ParticipantsNum))
-        max_value = int(ParticipantsNum)
+        max_value = int(upper_limit)
         )
 
 def input_years_number():
