@@ -19,7 +19,7 @@ def input_bk_package_price():
         value = 11.0, 
         format = "%f",
         min_value = 1.0,
-        max_value = 100.0
+        max_value = 100000.0
         )
 
 def input_number_of_block_keepers():
@@ -117,7 +117,6 @@ number_of_purchased_licenses = dec(input_number_of_licenses_per_tier_bk(Particip
 YearsNumber = dec(input_years_number())
 FRC = dec(0.675) # Function Reward Coefficient
 expected_bk_reward = expected_apy_calc(YearsNumber, TotalSupply, KFS, u_tokens, SecondsInYear, FRC, ParticipantsNum) / server_fraction * number_of_purchased_licenses
-#raised_amount = package_price * number_of_licenses_per_tier
 implied_token_price = package_price * number_of_purchased_licenses / expected_bk_reward
 TMTA = TMTA_calc(YearsNumber * SecondsInYear, TotalSupply, KFS, u_tokens)
 implied_fdv = TMTA * implied_token_price
