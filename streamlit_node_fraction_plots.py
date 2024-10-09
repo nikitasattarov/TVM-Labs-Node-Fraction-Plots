@@ -141,7 +141,7 @@ if plot_scale <= 15:
 else:
     values_x = np.arange(0, SecondsInYear * (plot_scale + 4) // 5 * 5 * 1.05,  SecondsInYear * (plot_scale + 4) // 5 * 5 * 1.05 / 1000)
     ax.set_xlim([0, (plot_scale + 4) // 5 * 5 * SecondsInYear * 1.05])
-values_tokens = np.array([minted_tokens_number_calc(t, TotalSupply, KFS, u_tokens, FRC, ParticipantsNum, number_of_purchased_licenses) for t in values_x])
+values_tokens = np.array([minted_tokens_number_calc(t, TotalSupply, KFS, u_tokens, FRC, ParticipantsNum, number_of_purchased_licenses) / server_fraction for t in values_x])
 min_y_value = min(list(values_tokens))
 max_y_value = max(list(values_tokens))
 ax.plot(values_x, values_tokens, color = "Green", label = "Fractional Reward")
